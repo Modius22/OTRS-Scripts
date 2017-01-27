@@ -12,6 +12,8 @@ $p_data = json_encode($l_data);
 /* CURL Request */
 $l_curl_handle = curl_init( $otrs_url );
 curl_setopt($l_curl_handle, CURLOPT_POST, 1);
+curl_setopt($l_curl_handle, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($l_curl_handle, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($l_curl_handle, CURLOPT_POSTFIELDS, $p_data);
 curl_setopt($l_curl_handle, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($l_curl_handle, CURLOPT_USERAGENT, 'API Tester');
